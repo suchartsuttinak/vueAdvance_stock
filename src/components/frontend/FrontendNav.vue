@@ -1,0 +1,31 @@
+<template>
+    <header class="container flex items-center justify-between px-4 mx-auto mt-6"><!-- Start Header -->
+        <div>
+            <a href="/"><img src="@/assets/img/logo.svg" alt="Logo"></a>
+        </div>
+        <div class="flex items-center">
+            <div class="hidden space-x-6 font-medium md:block">
+                <a href="#0" class="transition-colors duration-200 hover:text-emerald-700">Features</a>
+                <a href="#0" class="transition-colors duration-200 hover:text-emerald-700">Prices</a>
+                <a href="#0" class="transition-colors duration-200 hover:text-emerald-700">About</a>
+                <a href="#0" class="transition-colors duration-200 hover:text-emerald-700">Contacts</a>
+                <button class="bg-emerald-600 hover:bg-emerald-700 transition-colors duration-300 py-2.5 px-5 rounded-lg text-white font-semibold">Get Started</button>
+            </div>
+            <div class="md:hidden">
+                <a href="#0">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                      </svg>
+                </a>
+            </div>
+        </div>
+    </header><!-- End Header -->
+</template>
+
+<script setup lang="ts">
+
+</script>
+
+<style scoped>
+
+</style>
