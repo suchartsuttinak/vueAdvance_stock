@@ -1,15 +1,18 @@
 <template>
     <header class="container flex items-center justify-between px-4 mx-auto mt-6"><!-- Start Header -->
         <div>
-            <a href="/"><img src="@/assets/img/logo.svg" alt="Logo"></a>
+            <router-link to="/" ><img src="@/assets/img/logo.svg" alt="Logo" /></router-link>
         </div>
         <div class="flex items-center">
             <div class="hidden space-x-6 font-medium md:block">
-                <a href="#0" class="transition-colors duration-200 hover:text-emerald-700">Features</a>
-                <a href="#0" class="transition-colors duration-200 hover:text-emerald-700">Prices</a>
-                <a href="#0" class="transition-colors duration-200 hover:text-emerald-700">About</a>
-                <a href="#0" class="transition-colors duration-200 hover:text-emerald-700">Contacts</a>
+            <router-link to="/" class="transition-colors duration-200 hover:text-emerald-700">Home</router-link>
+            <router-link to="/Features" class="transition-colors duration-200 hover:text-emerald-700">Features</router-link>
+            <router-link to="/Servicies" class="transition-colors duration-200 hover:text-emerald-700">Servicies</router-link>
+            <router-link to="/Testimail" class="transition-colors duration-200 hover:text-emerald-700">Testimail</router-link>
+            <router-link to="/Contacts" class="transition-colors duration-200 hover:text-emerald-700">Contacts</router-link>
+            <router-link to="/getstarted">
                 <button class="bg-emerald-600 hover:bg-emerald-700 transition-colors duration-300 py-2.5 px-5 rounded-lg text-white font-semibold">Get Started</button>
+            </router-link>
             </div>
             <div class="md:hidden">
                 <a href="#0">
