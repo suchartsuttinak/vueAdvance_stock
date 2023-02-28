@@ -1,3 +1,4 @@
+import { title } from 'process'
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 
 import FrontendLayoutVue from '../layouts/FrontendLayout.vue'
@@ -22,32 +23,50 @@ const routes: Array<RouteRecordRaw> = [
             {
                 path: '',
                 name: 'Home',
-                component: HomeViewVue
+                component: HomeViewVue,
+                meta: {
+                    title: 'Home'
+                }
             },
             {
                 path: '/features',
                 name: 'Features',
-                component: FeaturesViewVue
+                component: FeaturesViewVue,
+                meta: {
+                    title: 'Features'
+                }
             },
             {
                 path: '/servicies',
                 name: 'Service',
-                component: ServiceViewVue
+                component: ServiceViewVue,
+                meta: {
+                    title: 'Service'
+                }
             },
             {
                 path: '/testimonials',
                 name: 'Testimonials',
-                component: TestimonialsViewVue
+                component: TestimonialsViewVue,
+                meta: {
+                    title: 'Testimonials'
+                }
             },
             {
                 path: '/contacts',
                 name: 'Contacts',
-                component: ContactViewVue
+                component: ContactViewVue,
+                meta: {
+                    title: 'Contacts'
+                }
             },
             {
                 path: '/getstarted',
                 name: 'Getstart',
-                component: GetStartedViewVue
+                component: GetStartedViewVue,
+                meta: {
+                    title: 'Getstart'
+                }
             },
             
         ]
@@ -58,5 +77,17 @@ const router = createRouter ({
     history: createWebHistory(import.meta.env.URL),
     routes
 })
+
+// การเรียกทำงานก่อนที่ route จะโหลด
+router.beforeEach((to, _, next) => {
+    
+    if(typeof(to.meta.title) == 'string'){
+        document.title = to.meta.title
+    }
+
+    next()
+
+    }
+    )
 
 export default router

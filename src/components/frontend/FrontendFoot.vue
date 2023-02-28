@@ -2,15 +2,15 @@
     <footer class="container px-4 py-6 mx-auto mt-6">
         <hr class="mb-6">
         <div class="flex flex-col justify-between mb-6 space-y-6 md:flex-row md:space-y-0">
-            <!-- <div class="flex-1">
+            <div class="flex-1">
                 <a href="/"><img src="@/assets/img/logo.svg" alt="Logo"></a>
             </div>
             <div class="flex flex-1 space-x-6 font-medium md:justify-center">
-                <a href="#0" class="transition-colors duration-200 hover:text-emerald-700">Features</a>
-                <a href="#0" class="transition-colors duration-200 hover:text-emerald-700">Prices</a>
-                <a href="#0" class="transition-colors duration-200 hover:text-emerald-700">About</a>
-                <a href="#0" class="transition-colors duration-200 hover:text-emerald-700">Contacts</a>
-            </div> -->
+                <router-link to="/features" class="transition-colors duration-200 hover:text-emerald-700">Features</router-link>
+                <router-link to="/servicies" class="transition-colors duration-200 hover:text-emerald-700">Servicies</router-link>
+                <router-link to="/testimonials" class="transition-colors duration-200 hover:text-emerald-700">Testimonials</router-link>
+                <router-link to="/contacts" class="transition-colors duration-200 hover:text-emerald-700">Contacts</router-link>
+            </div>
             <div class="flex flex-1 space-x-4 md:justify-end">
                 <a href="">
                     <i class='text-2xl transition duration-500 ease-in-out transform hover:scale-125 bx bxl-facebook-circle' ></i>
