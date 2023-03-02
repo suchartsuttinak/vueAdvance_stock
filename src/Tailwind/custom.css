@@ -3,3 +3,6 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 12px;
 }
+.router-link-exact-active{
+    color:blue;
+}
