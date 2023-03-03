@@ -3,9 +3,9 @@
        <div class="container md:flex md:items-center md:justify-between px-4 py-4 mx-auto md:my-2 dark:bg-black ">
 
         <div class="flex items-center justify-between">
-                <div>
-                    <router-link to="/" ><img src="@/assets/img/logo.svg" alt="Logo" /></router-link>
-                </div>
+            <div>
+                <router-link to="/"><img :src="img_logo" alt="Logo" /></router-link>
+            </div>
                 <div class="md:hidden">
                     <a href="#menu" @click="toggleMenu">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
