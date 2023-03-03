@@ -1,7 +1,9 @@
 <template>
     <main>
       <FrontendNav />
-      <router-view />
+      <div class="pt-8">
+        <router-view />
+      </div>
       <FrontendFoot />
 
     </main>

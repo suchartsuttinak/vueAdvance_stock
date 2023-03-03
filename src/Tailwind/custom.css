@@ -3,7 +3,10 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 12px;
 }
-/* การทำ Active Menu */
 .router-link-exact-active{
-    color: #059669 !important;
-    }
+    color:blue;
+}
+.dark {
+    background-color: #111621;
+    color: #fff;
+}
