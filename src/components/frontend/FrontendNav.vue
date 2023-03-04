@@ -4,7 +4,7 @@
 
         <div class="flex items-center justify-between">
             <div>
-                <router-link to="/"><img :src="img_logo" alt="Logo" /></router-link>
+                <router-link to="/"><img src="@/assets/img/logo.svg" alt="Logo" /></router-link>
             </div>
                 <div class="md:hidden">
                     <a href="#menu" @click="toggleMenu">
