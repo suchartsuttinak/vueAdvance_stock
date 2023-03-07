@@ -29,3 +29,82 @@
          </a>
              </div>
 ----------------------------------------------------
+--------------------------------------------------
+การสร้าง toggleMenu
+-----------
+1.สร้างตัวแปร 
+ const showMenu = ref(true)
+2. สร้าง function Toggle Menu
+    const toggleMenu = () => showMenu.value = !showMenu.value
+---------------------------------
+3.  ที่  template
+    <ul 
+     :class="showMenu ? 'flex' : 'hidden'"
+     class="flex-col mt-8 space-y-4 md:flex 
+     md:space-y-0 md:flex-row md:items-center 
+     md:space-x-4 md:mt-0 text-center">
+   </ul>
+------------------------------------
+4.ที่ Toggle ที่แท็ค <a></a>
+-----------------------------------
+   <div class="md:hidden">
+   <a href="#menu" @click="toggleMenu">
+   <svg xmlns="http://www.w3.org/2000/svg" 
+   class="h-7 w-7 text-white" 
+   fill="none" viewBox="0 0 24 24" 
+   stroke="currentColor">
+   <path stroke-linecap="round" 
+   stroke-linejoin="round" stroke-width="2" 
+   d="M4 6h16M4 12h16M4 18h16" />
+     </svg>
+         </a>
+             </div>
+----------------------------------------------------
+
+--------------------------------------------------
+การสร้างเมนูย่อย
+--------------
+1.สร้าง 
+	<ul>
+  	 < li></li>
+	</ul>
+------------------------
+2.สร้างตัวแปร
+	 const show = ref(false)
+-----------------
+3.สร้าง method
+	 const toggleDropdownMenu = () => show.value = !show.value
+-----------
+4.ที่ <ul> ใส่ property show
+      <ul v-show="show" >
+---------------------
+5.ที่ <li> เมนูหลักใส่ property -> toggleDropdownMenu
+	 <li @click="toggleDropdownMenu">
+-----------------------------
+----------------------------
+6. การทำ clickOutside
+-----------
+6.1 ใช้ libary Vue ues -> onClickOutside
+ *** web: https://vueuse.org/
+-------------------------------------
+6.2 import { onClickOutside } from '@vueuse/core'
+-----------------
+6.3  // สร้างตัวแปรการทำ Hide DropDown Mene onClickOutside
+    const target = ref(null)
+     onClickOutside(target, (event) => {
+        // console.log (event) 
+        show.value = false
+    })
+
+-------------------------
+6.4 นำตัวแปร target พื้นที่เป้าหมาย
+------------------
+  <ul 
+          v-show="show"
+          ref="target"
+          class="
+          md:absolute 
+          md:bg-white >
+   -----------------------------------------------
+
+
