@@ -11,9 +11,19 @@
               <button type="submit" class="px-6 py-4 font-semibold text-white transition-colors duration-300 rounded-lg bg-emerald-600 hover:bg-emerald-700 sm:rounded-none sm:rounded-tr-lg sm:rounded-br-lg">รักแบมนะ อิอิ</button>
           </div>
       </div>
-      <div>
-          <img src="@/assets/img/hero-illustration.png" alt="Illustration">
-      </div>
+      <!-- <div class="block">
+          <img :src="state" alt="Illustration" class="md:h-96 mx-auto">
+          <p class="grid grid-cols-2 text-center mt-4">
+            <button @click="prev()">Back</button>
+            <button @click="next()">next </button>
+        </p>
+      </div> -->
+      <div class="carousel block">
+        <transition>
+            <img :key="state" :src="state" alt="" class="slide mx-auto md:h-96 rounded-lg">
+        </transition>
+    </div>
+           
   </div>
 </section><!-- End Hero -->
 
@@ -31,8 +41,68 @@
 
 <script setup lang="ts">
 
+
+
+// import { useCycleList } from '@vueuse/core'
+
+// const { state, next, prev } = useCycleList([
+
+//     "./src/assets/img/hero-illustration.png",
+//     "./src/assets/img/slide2.svg",
+//     "./src/assets/img/slide3.svg"
+ 
+// ])
+import { useIntervalFn } from '@vueuse/core'
+import { useAppCycleList } from '../../hook/useAppCycleList'
+
+import { computed } from 'vue'
+
+const images = [
+        "./src/assets/img/hero-illustration.png",
+        "./src/assets/img/slide2.svg",
+        "./src/assets/img/slide3.svg",
+        "./src/assets/img/suchart.jpg",
+]
+
+const { state, next, isForward} = useAppCycleList(images, null)
+
+useIntervalFn(() => next(), 3000)
+
+const direction = computed(() => {
+        if (isForward.value) {
+            return {
+                from: 'translateX(100%)',
+                to: 'translateX(-50%)',
+            };
+        } else {
+            return {
+                from: 'translateX(-100%)',
+                to: 'translateX(100%)',
+            };
+        }
+    })
+
 </script>
 
 <style scoped>
-
+.carousel {
+    position: relative;
+    top: -100px;
+    /* left: 0%; */
+  }
+  img.slide {
+    position: absolute;
+    top: -80px;
+    /* left: 15%; */
+  }
+  .v-enter-active,
+  .v-leave-active {
+    transition: all 0.5s ease;
+  }
+  .v-enter-from {
+    transform: v-bind('direction.from');
+  }
+  .v-leave-to {
+    transform: v-bind('direction.to');
+  }
 </style>
